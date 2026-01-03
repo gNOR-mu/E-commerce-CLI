@@ -2,16 +2,34 @@ package com.ecommerce.demo.view;
 
 import java.util.Scanner;
 
-public class UserMenu implements Menu{
+public class UserMenu extends AbstractMenu {
     //TODO Definir servicios a utilizar
-    private final Scanner scanner;
 
     public UserMenu(Scanner scanner) {
-        this.scanner = scanner;
+        super(scanner);
     }
 
     @Override
-    public void show() {
-        System.out.println("User menu");
+    protected void printMenuOptions() {
+        System.out.println("""
+                **********************
+                *** Menú USER ***
+                **********************
+                
+                1) -
+                2) -
+                0) SALIR
+                """);
+    }
+
+    @Override
+    protected boolean handleOption(int option) {
+        switch (option) {
+            case 0 -> {
+                return false;
+            }
+            default -> System.out.println("Opción inválida");
+        }
+        return true;
     }
 }
