@@ -1,9 +1,28 @@
 package model;
 
-public class Product {
-    Long id;
-    Long categoryId;
+import model.base.Identifiable;
 
-    int price;
-    String name;
+public class Product implements Identifiable<Long> {
+    private Long id;
+    private Long categoryId;
+
+    private int price;
+    private String name;
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -1,11 +1,18 @@
 package model;
 
-public class Customer {
-    Long id;
+import model.base.Identifiable;
 
-    String name;
-    String rut;
-    String email;
-    String passHash;
-    String cellphone;
+public class Customer implements Identifiable<Long> {
+    private Long id;
+
+    private String name;
+    private String rut;
+    private String email;
+    private String passHash;
+    private String cellphone;
+
+    @Override
+    public Long getId() {
+        return id;
+    }
 }
