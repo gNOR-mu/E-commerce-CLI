@@ -12,6 +12,13 @@ public class Payment implements Identifiable<Long> {
     private LocalDateTime payday;
     private boolean paid;
 
+    public Payment(Long id, PaymentsMethod method, LocalDateTime payday, boolean paid) {
+        this.id = id;
+        this.method = method;
+        this.payday = payday;
+        this.paid = paid;
+    }
+
     @Override
     public Long getId() {
         return id;

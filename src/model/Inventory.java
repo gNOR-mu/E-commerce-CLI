@@ -8,6 +8,12 @@ public class Inventory implements Identifiable<Long> {
 
     private int quantity;
 
+    public Inventory(Long id, Long productId, int quantity) {
+        this.id = id;
+        this.productId = productId;
+        this.quantity = quantity;
+    }
+
     @Override
     public Long getId() {
         return id;

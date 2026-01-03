@@ -12,6 +12,14 @@ public class Order implements Identifiable<Long> {
     LocalDateTime creationDate;
     double total;
 
+    public Order(Long id, Long customerId, Long paymentId, LocalDateTime creationDate, double total) {
+        this.id = id;
+        this.customerId = customerId;
+        this.paymentId = paymentId;
+        this.creationDate = creationDate;
+        this.total = total;
+    }
+
     @Override
     public Long getId() {
         return id;

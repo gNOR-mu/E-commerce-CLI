@@ -9,6 +9,13 @@ public class Product implements Identifiable<Long> {
     private int price;
     private String name;
 
+    public Product(Long id, Long categoryId, int price, String name) {
+        this.id = id;
+        this.categoryId = categoryId;
+        this.price = price;
+        this.name = name;
+    }
+
     @Override
     public Long getId() {
         return id;
