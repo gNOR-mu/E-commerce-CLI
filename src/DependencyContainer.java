@@ -35,55 +35,55 @@ public class DependencyContainer {
         this.ORDER_ITEM_SERVICE = new OrderItemService(ORDER_ITEM_REPOSITORY, ORDER_SERVICE, PRODUCT_SERVICE);
     }
 
-    public CategoryRepository getCATEGORY_REPOSITORY() {
+    public CategoryRepository getCategoryRepository() {
         return CATEGORY_REPOSITORY;
     }
 
-    public CustomerRepository getCUSTOMER_REPOSITORY() {
+    public CustomerRepository getCustomerRepository() {
         return CUSTOMER_REPOSITORY;
     }
 
-    public InventoryRepository getINVENTORY_REPOSITORY() {
+    public InventoryRepository getInventoryRepository() {
         return INVENTORY_REPOSITORY;
     }
 
-    public OrderItemRepository getORDER_ITEM_REPOSITORY() {
+    public OrderItemRepository getOrderItemRepository() {
         return ORDER_ITEM_REPOSITORY;
     }
 
-    public OrderRepository getORDER_REPOSITORY() {
+    public OrderRepository getOrderRepository() {
         return ORDER_REPOSITORY;
     }
 
-    public PaymentRepository getPAYMENT_REPOSITORY() {
+    public PaymentRepository getPaymentRepository() {
         return PAYMENT_REPOSITORY;
     }
 
-    public ProductRepository getPRODUCT_REPOSITORY() {
+    public ProductRepository getProductRepository() {
         return PRODUCT_REPOSITORY;
     }
 
-    public CategoryService getCATEGORY_SERVICE() {
+    public CategoryService getCategoryService() {
         return CATEGORY_SERVICE;
     }
 
-    public CustomerService getCUSTOMER_SERVICE() {
+    public CustomerService getCustomerService() {
         return CUSTOMER_SERVICE;
     }
 
-    public PaymentService getPAYMENT_SERVICE() {
+    public PaymentService getPaymentService() {
         return PAYMENT_SERVICE;
     }
 
-    public ProductService getPRODUCT_SERVICE() {
+    public ProductService getProductService() {
         return PRODUCT_SERVICE;
     }
 
-    public OrderService getORDER_SERVICE() {
+    public OrderService getOrderService() {
         return ORDER_SERVICE;
     }
 
-    public OrderItemService getORDER_ITEM_SERVICE() {
+    public OrderItemService getOrderItemService() {
         return ORDER_ITEM_SERVICE;
     }
 }
