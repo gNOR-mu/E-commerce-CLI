@@ -5,6 +5,7 @@ import model.base.Identifiable;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public abstract class InMemoryAbstractRepository<T extends Identifiable<ID>, ID> implements CrudRepository<T, ID> {
     //simulación de la base de datos
@@ -24,5 +25,10 @@ public abstract class InMemoryAbstractRepository<T extends Identifiable<ID>, ID>
     @Override
     public boolean existsById(ID id) {
         return DB.containsKey(id);
+    }
+
+    @Override
+    public Optional<T> findById(ID id) {
+        return Optional.ofNullable(DB.get(id));
     }
 }
