@@ -3,6 +3,7 @@ import repository.impl.*;
 import service.*;
 
 public class DependencyContainer {
+    //TODO evaluar nombre de las constantes.
     private final CategoryRepository CATEGORY_REPOSITORY;
     private final CustomerRepository CUSTOMER_REPOSITORY;
     private final InventoryRepository INVENTORY_REPOSITORY;
