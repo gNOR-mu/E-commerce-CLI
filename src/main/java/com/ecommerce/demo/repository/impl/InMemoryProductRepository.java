@@ -25,6 +25,9 @@ public class InMemoryProductRepository extends InMemoryAbstractRepository<Produc
      */
     @Override
     public List<Product> findByNameIgnoreCase(String name) {
+        if (name == null){
+            return List.of();
+        }
         return DB.values().stream()
                 .filter(product -> product.getName().equalsIgnoreCase(name))
                 .toList();
@@ -39,6 +42,9 @@ public class InMemoryProductRepository extends InMemoryAbstractRepository<Produc
      */
     @Override
     public List<Product> findByCategoryId(Long categoryId) {
+        if (categoryId == null){
+            return List.of();
+        }
         return DB.values().stream()
                 .filter(product -> product.getCategoryId().equals(categoryId))
                 .toList();
