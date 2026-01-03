@@ -11,6 +11,15 @@ public class OrderItem implements Identifiable<Long> {
     private double unitPrice;
     private int quantity;
 
+    public OrderItem(Long id, Long productId, Long orderId, double subTotal, double unitPrice, int quantity) {
+        this.id = id;
+        this.productId = productId;
+        this.orderId = orderId;
+        this.subTotal = subTotal;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+    }
+
     @Override
     public Long getId() {
         return id;
