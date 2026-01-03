@@ -6,29 +6,41 @@ import com.ecommerce.demo.repository.CrudRepository;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicLong;
 
-public abstract class InMemoryAbstractRepository<T extends Identifiable<ID>, ID> implements CrudRepository<T, ID> {
+public abstract class InMemoryAbstractRepository<T extends Identifiable<Long>> implements CrudRepository<T, Long> {
     //simulación de la base de datos
-    protected final Map<ID, T> DB = new HashMap<>();
+    protected final Map<Long, T> DB = new HashMap<>();
+
+    // simulación del incrementado de índice automático al crear un registro en la base de datos
+    private final AtomicLong idGenerator = new AtomicLong(0);
 
     @Override
     public T save(T entity) {
-        DB.put(entity.getId(), entity);
+        if(entity.getId() == null){
+            // no existe el registro, por lo tanto, debo asignarle una nueva id
+            long newId = idGenerator.incrementAndGet();
+            entity.setId(newId);
+            DB.put(entity.getId(), entity);
+        }else{
+            // si ya existe solo actualizo el mapa
+            DB.put(entity.getId(), entity);
+        }
         return entity;
     }
 
     @Override
-    public void deleteById(ID id) {
+    public void deleteById(Long id) {
         DB.remove(id);
     }
 
     @Override
-    public boolean existsById(ID id) {
+    public boolean existsById(Long id) {
         return DB.containsKey(id);
     }
 
     @Override
-    public Optional<T> findById(ID id) {
+    public Optional<T> findById(Long id) {
         return Optional.ofNullable(DB.get(id));
     }
 }

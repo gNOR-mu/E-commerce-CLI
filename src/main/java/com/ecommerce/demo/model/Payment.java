@@ -12,8 +12,7 @@ public class Payment implements Identifiable<Long> {
     private LocalDateTime payday;
     private boolean paid;
 
-    public Payment(Long id, PaymentsMethod method, LocalDateTime payday, boolean paid) {
-        this.id = id;
+    public Payment(PaymentsMethod method, LocalDateTime payday, boolean paid) {
         this.method = method;
         this.payday = payday;
         this.paid = paid;
@@ -22,6 +21,11 @@ public class Payment implements Identifiable<Long> {
     @Override
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public PaymentsMethod getMethod() {

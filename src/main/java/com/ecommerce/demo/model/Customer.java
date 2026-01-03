@@ -11,8 +11,7 @@ public class Customer implements Identifiable<Long> {
     private String passHash;
     private String cellphone;
 
-    public Customer(Long id, String name, String rut, String email, String passHash, String cellphone) {
-        this.id = id;
+    public Customer(String name, String rut, String email, String passHash, String cellphone) {
         this.name = name;
         this.rut = rut;
         this.email = email;
@@ -23,5 +22,10 @@ public class Customer implements Identifiable<Long> {
     @Override
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 }

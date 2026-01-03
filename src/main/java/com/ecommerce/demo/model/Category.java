@@ -7,14 +7,18 @@ public class Category implements Identifiable<Long> {
 
     private String name;
 
-    public Category(Long id, String name) {
-        this.id = id;
+    public Category(String name) {
         this.name = name;
     }
 
     @Override
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

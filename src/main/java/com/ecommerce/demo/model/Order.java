@@ -12,8 +12,7 @@ public class Order implements Identifiable<Long> {
     LocalDateTime creationDate;
     double total;
 
-    public Order(Long id, Long customerId, Long paymentId, LocalDateTime creationDate, double total) {
-        this.id = id;
+    public Order(Long customerId, Long paymentId, LocalDateTime creationDate, double total) {
         this.customerId = customerId;
         this.paymentId = paymentId;
         this.creationDate = creationDate;
@@ -23,6 +22,11 @@ public class Order implements Identifiable<Long> {
     @Override
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getCustomerId() {
